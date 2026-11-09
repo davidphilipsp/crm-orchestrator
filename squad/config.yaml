@@ -1,0 +1,47 @@
+# crm-orchestrator Squad Configuration — AIOX
+version: "1.0"
+model: "claude-sonnet-4-20250514"
+max_tokens: 1000
+
+agents:
+  - id: copy_analyst
+    file: squad/copy_analyst.md
+    context: [docs/08_disparos.md, docs/10_compliance.md, memory/memory.json]
+
+  - id: journey_builder
+    file: squad/journey_builder.md
+    context: [docs/09_reguas.md, memory/memory.json]
+
+  - id: data_engineer
+    file: squad/data_engineer.md
+    context: [docs/11_dados.md]
+
+  - id: analyst
+    file: squad/analyst.md
+    context: [docs/11_dados.md, memory/memory.json, memory/hypothesis_log.md]
+
+  - id: segment_planner
+    file: squad/segment_planner.md
+    context: [docs/12_segmentacao.md, memory/memory.json]
+
+  - id: calendar_optimizer
+    file: squad/calendar_optimizer.md
+    context: [docs/13_calendario.md, memory/memory.json]
+
+  - id: gamification_manager
+    file: squad/gamification_manager.md
+    context: [docs/05_gamificacao.md, docs/06_missoes_diarias.md, memory/memory.json]
+
+  - id: tournament_manager
+    file: squad/tournament_manager.md
+    context: [docs/07_torneios.md, memory/memory.json]
+
+  - id: compliance_tc
+    file: squad/compliance_tc.md
+    context: [docs/10_compliance.md]
+
+rules:
+  - api_receives_aggregates_only: true
+  - web_search_requires_hypothesis: true
+  - memory_append_only: true
+  - max_context_docs_per_agent: 4

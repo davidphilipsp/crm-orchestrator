@@ -1,0 +1,26 @@
+# Secrets
+.env
+.secrets/
+credentials/
+*.json.secret
+
+# Data and generated outputs never enter the repo
+data/
+outputs/
+memory/validation_cache/
+*.xlsx
+*.csv
+!tests/fixtures/**/*.csv
+*.parquet
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

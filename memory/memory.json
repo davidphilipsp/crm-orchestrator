@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "last_updated": null,
+  "description": "Patterns confirmed by your own data. Append-only: never delete, mark deprecated if invalid. Ships empty: the original entries were operator results and were removed.",
+  "example_entry": {
+    "pattern_id": {
+      "regra": "<rule derived from evidence>",
+      "evidencia": "<period, metric and source that support it>",
+      "status": "confirmado | deprecated",
+      "data_confirmacao": "YYYY-MM-DD"
+    }
+  }
+}
